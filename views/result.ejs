@@ -19,7 +19,7 @@
 		<tbody class="table-group-divider">
 		<% results.data.forEach(result => { %>
 				<tr>
-					<td class="text-start text-white"><%= result.name %></td>
+					<td class="text-start text-white limit-text"><%= result.name %></td>
 					<td class="text-white"><%= functions.getCategory(parseInt(result.category)) %></td>
 					<td class="text-white">
 						<a class="link-light" href=<%= functions.makeMagnet(result.info_hash, result.name) %>>
