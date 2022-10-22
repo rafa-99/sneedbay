@@ -17,7 +17,7 @@
 			</tr>
 		</thead>
 		<tbody class="table-group-divider">
-		<% results.data.forEach(result => { %>
+		<% results.forEach(result => { %>
 				<tr>
 					<td class="text-start text-white limit-text"><%= result.name %></td>
 					<td class="text-white"><%= functions.getCategory(parseInt(result.category)) %></td>
