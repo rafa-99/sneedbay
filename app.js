@@ -4,7 +4,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = 4000;
+const PORT = 7777;
 
 // set the public folder to public acess and added a body parser
 app.use(express.static('public'));
@@ -26,4 +26,3 @@ app.post('/search', search);
 
 // app start
 app.listen(PORT);
-console.log('Server is listening on port ' + PORT);
