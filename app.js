@@ -17,11 +17,11 @@ app.set('view engine', 'ejs');
 const home = require("./routes/home");
 const info = require("./routes/info");
 const search = require("./routes/search");
-const settings = require("./routes/settings");
+const visit = require("./routes/visit");
 
 app.get('/', home);
 app.get('/info', info);
-app.get('/settings', settings);
+app.get('/visit', visit);
 app.post('/search', search);
 
 // app start
