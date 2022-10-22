@@ -4,7 +4,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = 7777;
+const PORT = module.exports.PORT = process.env.PORT || 3000;
+
 
 // set the public folder to public acess and added a body parser
 app.use(express.static('public'));

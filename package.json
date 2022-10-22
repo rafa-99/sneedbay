@@ -4,7 +4,7 @@
 	"description": "Piratebay indexing tool",
 	"main": "app.js",
 	"scripts": {
-		"start": "node app.js",
+		"start": "electron launch.js",
 		"dev": "nodemon app.js"
 	},
 	"keywords": [
@@ -22,6 +22,7 @@
 		"express": "^4.18.2"
 	},
 	"devDependencies": {
+		"electron": "^21.2.0",
 		"nodemon": "^2.0.20"
 	}
 }
