@@ -1,20 +1,22 @@
 "use strict";
 
 const {	app, BrowserWindow } = require('electron');
-const server = require('./app');
+const path = require('path');
+const server = require(path.join(__dirname,'/app'));
 
 if (require('electron-squirrel-startup')) return app.quit();
 
 function createWindow()
 {
 	const win = new BrowserWindow({
+		icon: path.join(__dirname, '/public/static/images/sneed.png'),
 		webPreferences: {
+			devTools: false,
 			nodeIntegration: true,
 		}
 	});
 
 	// Window preferences on startup
-	win.maximize();
 	win.setMenu(null);
 	win.loadURL('http://localhost:' + server.PORT);
 }
