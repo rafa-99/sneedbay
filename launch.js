@@ -1,3 +1,5 @@
+"use strict";
+
 const {	app, BrowserWindow } = require('electron');
 const server = require('./app');
 
@@ -12,7 +14,6 @@ function createWindow()
 	// Window preferences on startup
 	win.maximize();
 	win.setMenu(null);
-	console.log(server.PORT);
 	win.loadURL('http://localhost:' + server.PORT);
 }
 
@@ -22,13 +23,14 @@ app.whenReady().then(() => {
 	app.on('activate', () => {
 		if (BrowserWindow.getAllWindows().length === 0)
 		{
-			createWindow()
+			createWindow();
 		}
 	});
 });
 
 app.on('window-all-closed', () => {
-	if (process.platform !== 'darwin') {
+	if (process.platform !== 'darwin')
+	{
 		app.quit()
 	}
 });

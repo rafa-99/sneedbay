@@ -45,9 +45,9 @@ function getDate(date)
 	let d = dateObj.getUTCDate();
 	let mm;
 	let dd;
-	if (m < 10) mm = '0' + m
+	if (m < 10) mm = '0' + m;
 	else mm = m;
-	if (d < 10) dd = '0' + d
+	if (d < 10) dd = '0' + d;
 	else dd = d;
 	return dateObj.getUTCFullYear() + '-' + mm + '-' + dd;
 }
@@ -56,8 +56,7 @@ function getCategory(cat)
 {
 	let category = "";
 
-	if (cat > 100 && cat < 200)
-	{
+	if (cat > 100 && cat < 200)	{
 		category = "audio";
 	} else if (cat > 200 && cat < 300) {
 		category = "video";
