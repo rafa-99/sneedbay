@@ -27,4 +27,4 @@ app.get('/visit', visit);
 app.post('/search', search);
 
 // app start
-app.listen(PORT);
+app.listen(PORT, () => console.log("Server running on port " + PORT));
