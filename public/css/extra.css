@@ -27,3 +27,11 @@
 	overflow: hidden;
 	white-space: nowrap;
 }
+
+.search-bar:focus::placeholder{
+	color: transparent;
+}
+
+.fs-7 {
+	font-size: 0.7rem !important;
+}

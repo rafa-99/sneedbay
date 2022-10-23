@@ -1,20 +1,11 @@
 <%- include('partials/header'); %>
 
-<h1>SneedBay</h1>
-
-<div class="row">
-	<div class="col-sm align-self-center">
-		<p>Making Torrents Great Again</p>
-		<p>SneedBay is a PirateBay indexing tool which facilitates the use of the website through it's api(apibay).</p>
-		<p>In order to download and seed the torrents, I recommend either using <a href="https://www.qbittorrent.org/">qBitorrent</a> or <a href="https://transmissionbt.com/">transmission</a> softwares.</p>
-		<p><strong>Remember</strong>: Don't be a city slicker and please seed your torrents, otherwise, Al Sneed will pay you a <a href="/visit">visit</a>.</p>
-	</div>
-
-	<div class="col-md text-center">
-		<a href="static/pdf/ISaiF.pdf">
-			<img class="mw-100 w-75 img-fluid rounded" src="static/images/cover.png" alt="Index Cover">
-		</a>
-	</div>
+<div class="text-center mt-5">
+	<img class="mw-100 w-50 img-fluid" src="static/images/sneedab.gif" alt="info_conver">
+	<form class="p-4" action="search" method="POST">
+		<input type="text" name="search" class="mw-100 w-50 form-control text-bg-dark border-0 shadow text-center m-auto search-bar" placeholder="Search for torrent">
+	</form>
+	<p class="text-muted fs-7">In order to download and seed the torrents, I recommend either using <a href="https://www.qbittorrent.org/">qBitorrent</a> or <a href="https://transmissionbt.com/">transmission</a> softwares</p>
 </div>
 
 
