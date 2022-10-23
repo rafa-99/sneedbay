@@ -2,10 +2,10 @@
 	"name": "sneedbay",
 	"version": "1.0.0",
 	"description": "Piratebay indexing tool",
-	"main": "app.js",
+	"main": "launch.js",
 	"scripts": {
 		"start": "electron launch.js",
-		"dev": "nodemon app.js"
+		"dev": "node app.js"
 	},
 	"keywords": [
 		"piratebay",
@@ -22,7 +22,6 @@
 		"express": "^4.18.2"
 	},
 	"devDependencies": {
-		"electron": "^21.2.0",
-		"nodemon": "^2.0.20"
+		"electron": "^21.2.0"
 	}
 }
