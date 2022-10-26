@@ -2,7 +2,7 @@
 
 function visit(req, res)
 {
-	res.render('visit');
+	res.render('visit', {showSearchBar: true});
 };
 
 module.exports = visit;

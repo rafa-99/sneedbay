@@ -2,7 +2,7 @@
 
 function home(req, res)
 {
-	res.render('index');
+	res.render('index', {showSearchBar: false});
 };
 
 module.exports = home;

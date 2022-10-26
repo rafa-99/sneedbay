@@ -7,7 +7,7 @@ async function search(req, res)
 {
 	let query = req.body.search;
 	let results = await apibay.hit(query);
-	res.render('result', {query: query, results: results, functions: template});
+	res.render('result', {query: query, results: results, functions: template, showSearchBar: true});
 };
 
 module.exports = search;
