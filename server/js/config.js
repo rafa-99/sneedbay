@@ -18,17 +18,33 @@ function createConfig()
 		}
 	};
 
-	fs.writeFileSync(configPath, JSON.stringify(defaultConfig), 'utf-8');
+	try
+	{
+		fs.writeFileSync(configPath, JSON.stringify(defaultConfig), 'utf-8');
+	} 
+
+	catch (err)
+	{
+		console.log(err);
+	}
 }
 
 function loadConfig(configPath)
 {
-	if (!fs.existsSync(configPath))
+	try
 	{
-		createConfig(configPath, defaultConfig);
+		if (!fs.existsSync(configPath))
+		{
+			createConfig(configPath, defaultConfig);
+		}
+
+		this.loadedConfig = JSON.parse(fs.readFileSync(configPath));
 	}
 
-	this.loadedConfig = JSON.parse(fs.readFileSync(configPath));
+	catch (err)
+	{
+		console.log(err);
+	}
 }
 
 module.exports = { loadConfig, defaultConfigPath, loadedConfig };

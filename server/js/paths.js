@@ -6,10 +6,19 @@ const os = require('os');
 
 function ensureFolder(folder)
 {
-	if (!fs.existsSync(folder))
+	try
 	{
-		fs.mkdirSync(folder, { recursive: true });
+		if (!fs.existsSync(folder))
+		{
+			fs.mkdirSync(folder, { recursive: true });
+		}
 	}
+
+	catch (err)
+	{
+		console.log(err);
+	}
+
 	return folder;
 }
 
