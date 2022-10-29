@@ -1,28 +1,34 @@
 "use strict";
 
+// Imports
 const fs = require('fs');
+const path = require('path');
+const { ensureFolder, envPaths } = require('./paths');
 
-const defaultConfig = {
-	'settings': {
-		'nsfw_content': false
-	}
-};
-var config = {};
+// Handling Variables
+const configFolder = ensureFolder(path.join(envPaths.CONFIG, 'sneedbay'));
+const defaultConfigPath = path.join(configFolder, 'config.json');
+var loadedConfig = {};
 
-function createConfig(configPath, data)
+function createConfig()
 {
-	fs.writeFileSync(configPath, JSON.stringify(data), 'utf-8');
+	const defaultConfig = {
+		'settings': {
+			'nsfw_content': false
+		}
+	};
+
+	fs.writeFileSync(configPath, JSON.stringify(defaultConfig), 'utf-8');
 }
 
 function loadConfig(configPath)
 {
-	if ( !fs.existsSync(configPath) )
+	if (!fs.existsSync(configPath))
 	{
 		createConfig(configPath, defaultConfig);
 	}
-	
-	return JSON.parse(fs.readFileSync(configPath));
+
+	this.loadedConfig = JSON.parse(fs.readFileSync(configPath));
 }
 
-
-module.exports = {loadConfig, config};
+module.exports = { loadConfig, defaultConfigPath, loadedConfig };

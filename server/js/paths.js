@@ -28,7 +28,7 @@ const envPaths = {
 			HOME: os.homedir(),
 			DATA: process.env.APPDATA || ensureFolder(path.join(os.homedir(), 'AppData', 'Roaming')),
 			CONFIG: process.env.APPDATA || ensureFolder(path.join(os.homedir(), 'AppData', 'Roaming')),
-			CACHE: process.env.TEMP || process.env.TMP || ensureFolder(path.join(process.env.LOCALAPPDATA, 'Temp'))
+			CACHE: process.env.TEMP || process.env.TMP || path.join(process.env.LOCALAPPDATA, 'Temp') || ensureFolder(path.join(os.homedir(), 'AppData', 'Local', 'Temp'))
 		}
 	}
 

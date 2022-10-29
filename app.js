@@ -4,24 +4,21 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const path = require('path');
+var config = require('./server/js/config');
 
 // handling variables
 const app = express();
-const {	ensureFolder, envPaths } = require('./server/js/paths');
-const loadConfig = require('./server/js/config').loadConfig;
-const configFolder = ensureFolder(path.join(envPaths.CONFIG, 'sneedbay'));
-const configPath = path.join(configFolder, 'config.json');
+const configPath = config.defaultConfigPath;
 const PORT = module.exports.PORT = process.env.PORT || 3000;
-var config = require('./server/js/config').config;
 
 // loading configurations
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(bodyParser.urlencoded({extended: true}));
-config = loadConfig(configPath);
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
+config.loadConfig(configPath);
 
 // routes management
 const home = require("./routes/home");
