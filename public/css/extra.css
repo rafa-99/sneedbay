@@ -28,7 +28,7 @@
 	white-space: nowrap;
 }
 
-.search-bar:focus::placeholder{
+.mandatory-text-box:focus::placeholder{
 	color: transparent;
 }
 

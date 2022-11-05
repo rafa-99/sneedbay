@@ -12,11 +12,7 @@ const defaultConfigPath = path.join(configFolder, 'config.json');
 const defaultConfig = {
 	'settings': {
 		'nsfw_content': false,
-		'port': undefined,
-		'tor': {
-			'host': undefined,
-			'port': undefined
-		}
+		'port': undefined
 	}
 };
 var loadedConfig = {};

@@ -12,11 +12,7 @@ function save(req, res)
 	let newConfig = {
 		'settings': {
 			'nsfw_content': ((req.body.nsfw === "on") ? true : false),
-			'port': ((!isNaN(parseInt(req.body.port))) ? parseInt(req.body.port) : undefined),
-			'tor': {
-				'host': ((req.body.torHost) ? req.body.torHost : undefined),
-				'port': ((!isNaN(parseInt(req.body.torPort))) ? parseInt(req.body.torPort) : undefined)
-			}
+			'port': ((!isNaN(parseInt(req.body.port))) ? parseInt(req.body.port) : undefined)
 		}
 	};
 

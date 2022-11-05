@@ -19,12 +19,7 @@
 			<div class="row justify-content-center">
 				<div class="col-sm-4">
 					<label class="form-check-label" for="port">Port Number</label>
-					<input type="text" class="text-bg-dark form-control w-50 m-auto mt-2 text-center" placeholder="3000" name="port" <% if (config.settings.port) { %> value="<%= config.settings.port %>" <% } %> id="port">
-				</div>
-				<div class="col-sm-4">
-					<label class="form-check-label" for="tor">Tor SOCKS5 Proxy</label>
-					<input type="text" class="text-bg-dark form-control w-50 m-auto mt-2 text-center" placeholder="host" name="torHost" <% if (config.settings.tor.host) { %> value="<%= config.settings.tor.host %>" <% } %> id="host">
-					<input type="text" class="text-bg-dark form-control w-50 m-auto mt-2 text-center" placeholder="port" name="torPort" <% if (config.settings.tor.port) { %> value="<%= config.settings.tor.port %>" <% } %> id="port">
+					<input type="text" class="text-bg-dark form-control w-50 m-auto mt-2 text-center mandatory-text-box" placeholder="3000" name="port" <% if (config.settings.port) { %> value="<%= config.settings.port %>" <% } %> id="port">
 				</div>
 			</div>
 		</div>
