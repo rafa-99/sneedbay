@@ -4,10 +4,15 @@
 const bodyParser = require('body-parser');
 const express = require('express');
 const path = require('path');
-const app = express();
-const PORT = module.exports.PORT = process.env.PORT || 3000;
+var config = require('./server/js/config');
 
-// set the public folder to public acess and added a body parser
+// handling variables
+const app = express();
+const configPath = config.defaultConfigPath;
+config.loadConfig(configPath);
+const PORT = module.exports.PORT = config.loadedConfig.settings.port || process.env.PORT || 3000;
+
+// loading configurations
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -20,10 +25,13 @@ const home = require("./routes/home");
 const info = require("./routes/info");
 const search = require("./routes/search");
 const visit = require("./routes/visit");
+const {save, settings} = require("./routes/settings");
 
 app.get('/', home);
 app.get('/info', info);
 app.get('/visit', visit);
+app.get('/settings', settings);
+app.post('/settings', save);
 app.post('/search', search);
 
 // app start
