@@ -1,6 +1,6 @@
 {
 	"name": "sneedbay",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"description": "Piratebay indexing tool",
 	"main": "launch-electron.js",
 	"scripts": {
