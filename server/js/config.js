@@ -6,6 +6,7 @@ const path = require('path');
 const { ensureFolder, envPaths } = require('./paths');
 
 // Handling Variables
+const indentation = '\t';
 const configFolder = ensureFolder(path.join(envPaths.CONFIG, 'sneedbay'));
 const defaultConfigPath = path.join(configFolder, 'config.json');
 const defaultConfig = {
@@ -28,7 +29,7 @@ function createConfig(customConfig, configPath)
 
 	try
 	{
-		fs.writeFileSync(path, JSON.stringify(config), 'utf-8');
+		fs.writeFileSync(path, JSON.stringify(config, null, indentation), 'utf-8');
 	} 
 
 	catch (err)
