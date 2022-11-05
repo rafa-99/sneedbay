@@ -7,7 +7,7 @@ THIS SOFTWARE IS WRITTEN FOR EDUCATIONAL PURPOSES ONLY. I DO NOT CONDONE NOR END
 
 ## Screenshots
 
-![Home Page](image/home.png)
+![Home Page](images/home.png)
 
-![Torrents Result](image/query.png)
+![Torrents Result](images/query.png)
 
